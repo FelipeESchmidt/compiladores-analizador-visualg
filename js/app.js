@@ -54,8 +54,8 @@ const mountTable = (occurrences) => {
 const clearCode = (code) => {
   const lowered = code.toLowerCase();
   const withoutStrings = lowered.replaceAll(/"(.*?)"/g, "");
-  const withoutCommentaries1 = withoutStrings.replaceAll(/\/\/(.*?)\n/g, "");
-  const withoutCommentaries2 = withoutCommentaries1.replaceAll(/\/\*(.*?)\*\//g, "");
+  const withoutCommentaries1 = withoutStrings.replaceAll(/\/\*(.*?)\*\//g, "");
+  const withoutCommentaries2 = withoutCommentaries1.replaceAll(/\/\/(.*?)\n/g, "");
   return withoutCommentaries2;
 };
 
