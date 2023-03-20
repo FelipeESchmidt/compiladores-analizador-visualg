@@ -22,6 +22,7 @@ const palavrasReservadas = [
   "se",
   "fimescolha",
   "escolha",
+  "outro caso",
   "caso",
   "fim",
   "interrompa",
@@ -53,8 +54,9 @@ const mountTable = (occurrences) => {
 const clearCode = (code) => {
   const lowered = code.toLowerCase();
   const withoutStrings = lowered.replaceAll(/"(.*?)"/g, "");
-  const withoutCommentaries = withoutStrings.replaceAll(/\/\/(.*?)\n/g, "");
-  return withoutCommentaries;
+  const withoutCommentaries1 = withoutStrings.replaceAll(/\/\/(.*?)\n/g, "");
+  const withoutCommentaries2 = withoutCommentaries1.replaceAll(/\/\*(.*?)\*\//g, "");
+  return withoutCommentaries2;
 };
 
 const analizeCode = () => {
